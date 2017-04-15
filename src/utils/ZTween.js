@@ -1,5 +1,5 @@
 //运动公式
-var Tween = {
+let Tween = {
 	linear: function (t, b, c, d){
 		return c*t/d + b;
 	},
@@ -136,7 +136,7 @@ var Tween = {
  * @param {Object} val 修改样式的目标值
  */
 
-function css(element, attr , val){
+export function css(element, attr , val){
 	
 	//如果传入的是transform 的属性名 调用cssTransform函数
 	if(css.attr.indexOf(attr)>=0) {
@@ -170,7 +170,7 @@ css.attr = ["scale", "scaleX","scaleY", "scaleZ",  "rotateX", "rotateY", "rotate
  * @param {Object} attr	需要设置那个transform值
  * @param {Object} val	目标值 不带单位
  */
-function cssTransform(element, attr, val){
+export function cssTransform(element, attr, val){
 	if(!element.transform){
 		element.transform = {};
 	}
@@ -235,7 +235,7 @@ function cssTransform(element, attr, val){
  * 		init.type {String} 运动形式 为Tween函数的任何一个属性名
  * 
  */
-function ZTween(init){
+export function ZTween(init){
 	var t = 0,
 		b = {}, //运动起点
 		c = {},	//运动区间

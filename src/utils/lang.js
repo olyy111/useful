@@ -18,7 +18,7 @@ function isPlainObject ( obj ) {
     Ctor = hasOwn.call( proto, "constructor" ) && proto.constructor;
     return typeof Ctor === "function" && toString.call( Ctor ) === toString.call( Object );
 }
-function extend() {
+export function extend() {
     var options, name, src, copy, copyIsArray, clone,
         target = arguments[ 0 ] || {},
         i = 1,
