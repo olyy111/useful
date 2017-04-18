@@ -59,7 +59,7 @@ let scroll = new ZScroll({
 Options List:
 
 - el: 外层元素的id
-- fingerTime: 60 当手指按下多久之后，元素不在滚动
+- fingerTime: 60 当手指按下多久之后在松开时，元素不再滚动
 - hasScrollBar: true, 是否有滚动条
 - scrollBarId: "scrollBarId" 滚动条id
 - bounce:true  是否开启弹力动画
@@ -67,7 +67,7 @@ Options List:
 - bounceDuration: 0.8 弹力动画时间因数
 - swipeDuration: 0.8 惯性滚动持续时间因数
 - minBarHeight: 30 最小滚动条高度
-- swipeDisFactor: 1 唤醒滚动距离因数
+- swipeDisFactor: 1 惯性滚动距离因数
 
 根据滚动条id自定义样式：background border-radius width
 
@@ -98,9 +98,10 @@ Events 列表
 ## api
 
 scroll为滚动实例
-scroll.refresh() 当DOM高度发生变化，重新计算滚动
-scroll.disable() 暂停滚动
-scroll.enable() 重新开始滚动
+
+- scroll.refresh() 当DOM高度发生变化，重新计算滚动  
+- scroll.disable() 暂停滚动   
+- scroll.enable() 重新开始滚动 
 
 ## 派发滚动
 
@@ -109,7 +110,7 @@ scroll.enable() 重新开始滚动
 Example:
 
 ```javascript
-let scroll = new ZScroll(｛el: "#wrapper"｝)
+let scroll = new ZScroll({el: "#wrapper"})
 scroll.scrollTo(0, 500)
 ```
 
