@@ -4,13 +4,13 @@ import {
     extend,
     css,
     ZTween
-} from "./utils"
+} from "../utils"
 
 const SWIPEBASE = 100
 const SWIPEDISBASE = 20
 const STAYTIME = 60
 
-class ZScroll extends EventEmitter{
+export class ZScroll extends EventEmitter{
     constructor(opations){
         super()
 
