@@ -94,6 +94,7 @@ Events 列表
 - refresh - 当 ZScroll 刷新时触发
 - pause - disable()时触发
 - restart - enable()时触发
+
 ## api
 scroll为滚动实例
 scroll.refresh() 当DOM高度发生变化，重新计算滚动
