@@ -29,7 +29,7 @@ export class ZScroll extends EventEmitter{
         
         this.wrapper = document.querySelector(this.defaults.el)
         this.scroller = this.wrapper.firstElementChild
-        
+
         css(this.scroller, 'translateZ', '0.01')
         
         this.x = 0
@@ -134,8 +134,6 @@ export class ZScroll extends EventEmitter{
         this.x = Math.round(css(this.scroller, "translateY"))
         let endTime = new Date().getTime()
         let lastDisTime = endTime - this._lastMoveTime
-
-        
         
         //长时按压，手指离开继续滚动
         if(lastDisTime>STAYTIME){
@@ -224,6 +222,7 @@ export class ZScroll extends EventEmitter{
         this.defaults.hasScrollBar&&this.scrollBar.setAttribute('id', this.defaults.scrollBarId);
 
         this.wrapper.appendChild(this.scrollBar);
+        this.scrollBar.style.cssText = "position: absolute;right: 0;top: 0;opacity: 0;"
     }
     _scrollBarMoveFn(){
         if(!this.defaults.hasScrollBar) return

@@ -70,7 +70,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "/assets/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 1);
@@ -125,6 +125,8 @@ var ZScroll = exports.ZScroll = function (_EventEmitter) {
 
         _this.wrapper = document.querySelector(_this.defaults.el);
         _this.scroller = _this.wrapper.firstElementChild;
+
+        _this.wrapper.style.position = 'relative';
 
         (0, _utils.css)(_this.scroller, 'translateZ', '0.01');
 
@@ -345,6 +347,7 @@ var ZScroll = exports.ZScroll = function (_EventEmitter) {
             this.defaults.hasScrollBar && this.scrollBar.setAttribute('id', this.defaults.scrollBarId);
 
             this.wrapper.appendChild(this.scrollBar);
+            this.scrollBar.style.cssText = "position: absolute;right: 0;top: 0;opacity: 0;";
         }
     }, {
         key: "_scrollBarMoveFn",

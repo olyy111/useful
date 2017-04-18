@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no" />
+		<title></title>
+		
+		<style>
+			body {
+				margin:0;
+			}
+			ul,li {
+				margin:0;
+				padding:0;
+				list-style: none;
+			}
+			html, body {
+				position: relative;
+				height:100%;
+				overflow: hidden;
+			}
+			
+			header {
+				position: absolute;
+				left:0;
+				top:0;
+				right:0;
+				height:40px;
+				text-align: center;
+				line-height: 40px;
+				font-size: 24px;
+				background: black;
+				color: #fff;
+			}
+			#wrap {
+				position: absolute;
+				left:0;
+				right:0;
+				top:40px;
+				bottom:40px;
+				overflow: hidden;
+			}
+			footer {
+				position: absolute;
+				left:0;
+				bottom:0;
+				right:0;
+				height:40px;
+				text-align: center;
+				line-height: 40px;
+				font-size: 24px;
+				background: black;
+				color: #fff;
+			}
+			#list {
+				/*transform: translateY(10px);*/
+			}
+			#scrollBar {
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 3px;
+				background: grey;
+				border-radius: 3px;
+				opacity: 0;
+			}
+		</style>
+		<script src="/assets/zscroll.js"></script>
+	</head>
+	<body>
+		<div></div>
+		<header id="hd">
+			这是头部
+			<button id="ableBtn">ableBtn</button>
+			<button id="disableBtn">disableBtn</button>
+			<button id="scroll_to">scrollTo</button>
+		</header>
+		<section id="wrap">
+			<ul id="list"></ul>
+		</section>
+		<footer id="ft">这是底部</footer>
+		<script>
+			let oList = document.getElementById("list");
+			function createLis(num){
+				let html = "";
+				for(let i=0;i<num;i++){
+					html += '<li>这是第' + i + '行</li>';
+				}
+				oList.innerHTML = html;
+			}
+			createLis(100);
+			document.addEventListener("touchstart", function (ev){
+				ev.preventDefault();
+			}, {
+				passive:false
+			})
+			//测试
+			hd.addEventListener('touchstart', () => {
+				createLis(10)
+				myScroll.refresh()
+			})
+			ft.addEventListener('touchstart', () => {
+				createLis(100)
+				myScroll.refresh()
+			})
+
+			disableBtn.addEventListener('touchstart', (ev) => {
+				myScroll.disable()
+				ev.stopPropagation();
+				
+			})
+
+			ableBtn.addEventListener('touchstart', (ev) => {
+				myScroll.enable()
+				ev.stopPropagation();
+				
+			})
+			scroll_to.addEventListener('touchstart', (ev) => {
+				myScroll.scrollTo(-300)
+				ev.stopPropagation();
+			})
+			
+			var myScroll = new ZScroll({
+				el: "#wrap"
+			})
+			console.log(myScroll)
+		</script>
+	</body>
+</html>

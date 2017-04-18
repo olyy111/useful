@@ -4,7 +4,8 @@ module.exports = {
     path: __dirname + "/dist",
     filename: "zscroll.js",
     library: "ZScroll",
-    libraryTarget: "umd"
+    libraryTarget: "umd",
+    publicPath: "/assets/"
   },
 
   module: {
@@ -16,5 +17,10 @@ module.exports = {
         
       }
     ]
+  },
+  devServer: {
+    contentBase: 'demo/',
+    port: 8888,
+    inline: true
   }
 }
