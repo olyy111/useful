@@ -96,6 +96,7 @@ Events 列表
 - restart - enable()时触发
 
 ## api
+
 scroll为滚动实例
 scroll.refresh() 当DOM高度发生变化，重新计算滚动
 scroll.disable() 暂停滚动
